@@ -1881,8 +1881,15 @@ main {
     width: min(var(--container), calc(100% - 1.3rem));
   }
 
+  .site-header {
+    background: linear-gradient(180deg, rgba(27, 19, 15, 0.92), rgba(13, 10, 8, 0.9));
+    backdrop-filter: blur(10px);
+  }
+
   .menu-toggle {
     display: block;
+    background: linear-gradient(145deg, rgba(244, 186, 115, 0.14), rgba(255, 255, 255, 0.03));
+    border-color: rgba(244, 186, 115, 0.45);
   }
 
   .main-nav {
@@ -1891,13 +1898,19 @@ main {
     right: -100%;
     width: min(90vw, 360px);
     height: 100vh;
-    background: #0d0a08;
+    background:
+      radial-gradient(circle at 85% 8%, rgba(244, 186, 115, 0.24), transparent 40%),
+      radial-gradient(circle at 8% 92%, rgba(217, 154, 82, 0.2), transparent 48%),
+      linear-gradient(160deg, #271a14 0%, #1a120e 45%, #100b09 100%);
     border-left: 1px solid var(--line);
-    padding: 5.8rem 1.2rem 1.2rem;
+    padding: 4.9rem 1rem 1rem;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.65rem;
     transition: right var(--transition);
+    backdrop-filter: blur(10px);
+    box-shadow: -18px 0 42px rgba(0, 0, 0, 0.45);
+    overflow-y: auto;
   }
 
   .main-nav.open {
@@ -1907,6 +1920,29 @@ main {
   .main-nav a {
     width: 100%;
     font-size: 0.92rem;
+    color: #f0e3d1;
+  }
+
+  .main-nav a:not(.btn) {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.72rem 0.82rem;
+  }
+
+  .main-nav a:not(.btn)::after {
+    display: none;
+  }
+
+  .main-nav a:not(.btn):hover,
+  .main-nav a:not(.btn):focus-visible {
+    background: rgba(244, 186, 115, 0.14);
+    border-color: rgba(244, 186, 115, 0.35);
+  }
+
+  .main-nav .btn {
+    width: 100%;
+    margin-top: 0.25rem;
   }
 
   body.nav-open {
