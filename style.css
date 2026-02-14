@@ -1889,11 +1889,11 @@ main {
     position: fixed;
     top: 0;
     right: -100%;
-    width: min(84vw, 340px);
+    width: min(90vw, 360px);
     height: 100vh;
     background: #0d0a08;
     border-left: 1px solid var(--line);
-    padding: 6.4rem 1.4rem 1.4rem;
+    padding: 5.8rem 1.2rem 1.2rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
@@ -1914,7 +1914,45 @@ main {
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.7rem, 18vw, 4.6rem);
+    font-size: clamp(2.5rem, 16vw, 4.1rem);
+  }
+
+  .hero-grid {
+    gap: 1.1rem;
+    padding: 1.2rem 0 2.4rem;
+  }
+
+  .hero-copy,
+  .hero-media {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    width: min(430px, 100%);
+    margin-inline: auto;
+    gap: 0.65rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .hero-note {
+    text-align: center;
+  }
+
+  .hero-frame::before,
+  .hero-frame::after {
+    display: none;
+  }
+
+  .floating-offer {
+    position: static;
+    margin-top: 0.75rem;
+    text-align: center;
+    width: 100%;
   }
 
   .portfolio-grid,
@@ -1927,17 +1965,71 @@ main {
   }
 
   .schedule-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-highlight {
+    align-items: flex-start;
+    gap: 0.55rem;
+  }
+
+  .reviews-highlight span {
+    margin-left: 0;
+  }
+
+  .review-card-head {
+    flex-wrap: wrap;
+  }
+
+  .location-actions {
+    width: 100%;
+  }
+
+  .location-actions .btn {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .map-wrap,
+  .map-wrap iframe {
+    min-height: 300px;
+  }
+
+  .channel-link {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .cta-final-box .btn {
+    width: min(320px, 100%);
   }
 }
 
 @media (max-width: 480px) {
+  .container {
+    width: min(var(--container), calc(100% - 1rem));
+  }
+
   .section {
-    padding: 3.5rem 0;
+    padding: 3rem 0;
+  }
+
+  .brand {
+    font-size: 1.45rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.2rem, 15vw, 3.3rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.96rem;
   }
 
   .hero-frame img {
-    height: 360px;
+    width: 100%;
+    height: auto;
+    max-height: min(48vh, 320px);
   }
 
   .service-card,
@@ -1950,6 +2042,20 @@ main {
 
   .schedule-grid {
     grid-template-columns: 1fr;
+  }
+
+  .day-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .slot-row {
+    width: 100%;
+  }
+
+  .slot-row span {
+    width: 100%;
+    text-align: center;
   }
 
   .schedule-banner {
@@ -1965,20 +2071,34 @@ main {
     padding: 0.8rem;
   }
 
+  .reviews-highlight strong {
+    font-size: 1.8rem;
+  }
+
   .reviews-highlight span {
     margin-left: 0;
   }
 
+  .review-card-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .review-verified {
+    align-self: flex-start;
+  }
+
   .channel-body h3 {
-    font-size: 1.8rem;
+    font-size: 1.65rem;
   }
 
   .team-content h3 {
-    font-size: 1.8rem;
+    font-size: 1.65rem;
   }
 
   .faq-question {
-    font-size: 0.94rem;
+    font-size: 0.9rem;
+    padding: 0.9rem;
   }
 }
 
